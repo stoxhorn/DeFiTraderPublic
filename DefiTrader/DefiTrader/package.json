@@ -1,0 +1,28 @@
+{
+  "name": "dft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "./index.js",
+    "test": "./test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "ethers": "^6.11.1",
+    "express": "^4.19.2",
+    "pino": "^8.19.0"
+  },
+  "imports": {
+    "#Services/*.js": "./src/Services/*.js",
+    "#Control/*.js": "./src/Control/*.js",
+    "#Objects/*.js": "./src/Objects/*.js",
+    "#conf/*": "./conf/*"
+  },
+  "description": "",
+  "devDependencies": {
+    "pino-pretty": "^11.0.0"
+  }
+}

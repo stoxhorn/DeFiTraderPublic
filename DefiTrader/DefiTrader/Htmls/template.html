@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <h1>A heading here</h1>
+    !!address!!
+    <p>Some additional information here</p>
+</header>
+<button onclick="location.href='http://localhost:3000/load_wallet'" type="button">
+    load wallet</button>
+
+<button onclick="location.href='http://localhost:3000/create_wallet'" type="button">
+    create wallet</button>
+
+</body>
+<script>
+    document.getElementById("address").innerHTML = window.address.toString();
+</script>
+</html>

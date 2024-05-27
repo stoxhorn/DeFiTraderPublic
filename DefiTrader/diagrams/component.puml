@@ -1,0 +1,21 @@
+@startuml
+rectangle Control {
+    node transactionHandler {
+        [transactionBuilder]
+        [transactionQueue]
+    }
+    [web3Connector]
+    node eventLoop {
+        [eventListener] --> transactionQueue
+        [eventListener] -> web3Connector
+    }
+}
+
+node "View" {
+    send_txn --> [transactionBuilder]
+    txn_on_event --> [eventListener]
+    get_data --> [web3Connector]
+}
+
+
+@enduml

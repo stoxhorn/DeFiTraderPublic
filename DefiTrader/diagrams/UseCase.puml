@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+actor "user" as user
+
+rectangle Frontend {
+    usecase "snipe token" as snipe
+    usecase "sell token" as sell
+    usecase "buy token" as buy
+    usecase "limit orders" as limit
+    usecase "notifications" as notif
+    usecase "save/load wallet" as wallet
+    usecase "add/remove token" as token
+    usecase "track LP" as lp
+}
+user --> snipe
+user --> sell
+user --> buy
+user --> limit
+user --> notif
+user --> token
+user --> wallet
+user --> lp
+
+rectangle Server {
+    usecase "Send transaction" as txn
+    usecase "txn on event" as txn_on_event
+    usecase "get data" as get
+    usecase "eventlistener" as event_listener
+}
+
+snipe --> txn_on_event
+sell --> txn
+buy --> txn
+limit --> txn_on_event
+notif --> event_listener
+wallet --> get
+token --> get
+lp --> get
+
+@enduml

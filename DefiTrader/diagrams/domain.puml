@@ -1,0 +1,48 @@
+@startuml
+
+interface contract {
+
+}
+
+class token {
+
+}
+contract <|-- token
+
+class dex {
+
+}
+contract <|-- dex
+
+class wallet {
+
+}
+
+class transaction {
+
+}
+
+class event {
+
+}
+
+class reaction {
+    [event]
+}
+reaction --* event
+
+class block {
+    address
+    [transaction]
+    metadata
+}
+
+class network {
+    name:str
+}
+
+class address {
+    [network]
+}
+
+@enduml
